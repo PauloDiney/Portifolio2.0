@@ -215,7 +215,7 @@ const Main = () => {
   });
 
   return (
-    <main className="main" ref={mainRef}>
+    <main className="main"  id="about"ref={mainRef}>
       <div className="main-container">
         <div className="main-title">
           <h1 ref={h1Ref} id="lines">
