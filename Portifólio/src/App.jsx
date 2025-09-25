@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import Header from './components/Header'
 import HeroBanner from './components/HeroBanner'
+import Main from './components/Main'
+import Projects from './components/Projects'
 import './App.css'
 
 
@@ -11,6 +13,8 @@ function App() {
   return (
     <><Header />
       <HeroBanner />
+      <Main />
+      <Projects />
 
     </>
   )
