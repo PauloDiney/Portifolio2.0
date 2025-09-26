@@ -33,18 +33,16 @@ const Main = () => {
 
     const wordSpans = h1Element.querySelectorAll("span");
 
-    // Configurar animação do parágrafo
+    // Configurar animação do parágrafo por linhas
     const pText = pElement.textContent;
-    const pWords = pText.split(" ");
+    const sentences = pText.split('. ').filter(sentence => sentence.trim() !== '');
 
-    pElement.innerHTML = pWords
+    pElement.innerHTML = sentences
       .map(
-        (word) =>
-          `<span style="display: inline-block; opacity: 0; transform: translateY(-100px) rotate(${
-            Math.random() * 160 - 80
-          }deg);">${word}</span>`
+        (sentence, index) =>
+          `<span style="display: block; opacity: 0; transform: rotateX(-100deg);">${sentence}${index < sentences.length - 1 ? '.' : ''}</span>`
       )
-      .join(" ");
+      .join(' ');
 
     const pWordSpans = pElement.querySelectorAll("span");
 
@@ -64,19 +62,19 @@ const Main = () => {
       });
     };
 
-    // Função para executar a animação do parágrafo
+    // Função para executar a animação do parágrafo (mesma do h1)
     const handleParagraphAnimation = () => {
       if (paragraphAnimation.current) {
         paragraphAnimation.current.kill();
       }
 
       paragraphAnimation.current = gsap.to(pWordSpans, {
-        y: 0,
+        rotationX: 0,
+        transformOrigin: "50% 50% -160px",
         opacity: 1,
-        rotation: 0,
-        duration: 0.2,
-        ease: "back",
-        stagger: 0.15,
+        duration: 0.8,
+        ease: "power3",
+        stagger: 0.25,
         delay: 0.5, // Atraso para começar após o H1
       });
     };
