@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+
+.habilidades{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #0d1117;
+    position: relative;
+    z-index: 10; /* Fica por cima da máscara (z-index: 1) */
+    padding: 4rem 2rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.habilidades h1{
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    background: linear-gradient(135deg, #f20e0e 0%, #ff2a2a 50%, #ff4444 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.2;
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+    z-index: 20;
+}
+
+.line-red{
+    display: inline-block;
+    width: 20rem;
+    height: 4px;
+    background: linear-gradient(90deg, #f20e0e 0%, #ff2a2a 50%, #ff4444 100%);
+    border-radius: 2px;
+
+}
+
+.habilidades-text{
+    font-size: 1.25rem;
+    color: #8b949e;
+    line-height: 1.6;
+    max-width: 600px;
+    text-align: justify;
+}
+
+
+.habilidade-content{
+    width: 100%;
+    margin-top: 6rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.habilidade-card{
+    background-color: #8b949e;
+    padding: 1rem;
+    width: 280px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+
+

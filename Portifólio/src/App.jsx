@@ -3,7 +3,9 @@ import Header from './components/Header'
 import HeroBanner from './components/HeroBanner'
 import Main from './components/Main'
 import Projects from './components/Projects'
+import Habilidades from './components/Habilidades'
 import './App.css'
+
 
 
 
@@ -15,6 +17,8 @@ function App() {
       <HeroBanner />
       <Main />
       <Projects />
+      <Habilidades />
+
 
     </>
   )

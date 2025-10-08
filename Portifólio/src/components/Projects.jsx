@@ -5,6 +5,7 @@ import mainliImg from '../assets/img/mainli.png'
 import projeto3dImg from '../assets/img/Projeto3d.png'
 import sakuraImg from '../assets/img/sakura.png'
 import serdigitalImg from '../assets/img/Serdigital.png'
+import mountLand from '../assets/img/mount.png'
 
 const Projects = () => {
   const projects = [
@@ -14,8 +15,8 @@ const Projects = () => {
       description: "Website moderno para estúdio de dança com design elegante e animações suaves",
       image: dancaImg,
       tags: ["React", "CSS", "Animation"],
-      github: "#",
-      demo: "#"
+      github: "https://github.com/PauloDiney/Danca",
+      demo: "https://dancacla.netlify.app/"
     },
     {
       id: 2,
@@ -23,35 +24,44 @@ const Projects = () => {
       description: "Plataforma digital interativa com interface responsiva e experiência otimizada",
       image: mainliImg,
       tags: ["JavaScript", "HTML", "CSS"],
-      github: "#",
-      demo: "#"
+      github: "https://github.com/PauloDiney/MA.INLINE",
+      demo: "https://mainli.netlify.app/"
     },
     {
       id: 3,
       title: "Projeto 3D",
       description: "Experiência imersiva em 3D com tecnologias modernas e design inovador",
       image: projeto3dImg,
-      tags: ["Three.js", "WebGL", "React"],
-      github: "#",
-      demo: "#"
+      tags: ["Three.js", "Tailwind CSS", "React"],
+      github: "https://github.com/PauloDiney/Projeto-3D",
+      demo: "https://3dproje.netlify.app/"
     },
     {
       id: 4,
       title: "Sakura Theme",
-      description: "Interface temática inspirada na natureza com design delicado e funcional",
+      description: "Interface temática inspirada na cultura japonesa e sua culinária",
       image: sakuraImg,
       tags: ["UI/UX", "CSS", "Design"],
-      github: "#",
-      demo: "#"
+      github: "https://github.com/PauloDiney/Sakura",
+      demo: "https://sakurajapanese.netlify.app/"
     },
     {
       id: 5,
       title: "SerDigital",
       description: "Solução digital completa para empresas com foco na transformação digital",
       image: serdigitalImg,
-      tags: ["Full Stack", "React", "Node.js"],
-      github: "#",
-      demo: "#"
+      tags: ["Responsividade", "HTML semântico", "CSS"],
+      github: "https://github.com/PauloDiney/SerDigital",
+      demo: "https://serdigitall.netlify.app/"
+    },
+    {
+      id: 6,
+      title: "Mount Land",
+      description: "Site de turismo com foco em montanhas e trilhas",
+      image: mountLand,
+      tags: ["Responsividade", "HTML semântico", "CSS"],
+      github: "https://github.com/PauloDiney/Mount.git",
+      demo: "https://mountland.netlify.app/"
     }
   ]
 
@@ -96,7 +106,10 @@ const Projects = () => {
             </div>
           </article>
         ))}
-      </div>
+
+       <a className='btn-ver-mais' href="https://github.com/PauloDiney">Ver mais projetos</a>
+      </div> 
+      
     </div>
   )
 }
