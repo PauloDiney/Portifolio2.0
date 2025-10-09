@@ -5,7 +5,6 @@
 .habilidades{
     width: 100%;
     min-height: 100vh;
-    background-color: #0d1117;
     position: relative;
     z-index: 10; /* Fica por cima da máscara (z-index: 1) */
     padding: 4rem 2rem;
@@ -37,7 +36,7 @@
 
 .habilidades-text{
     font-size: 1.25rem;
-    color: #8b949e;
+    color: #8b949e77;
     line-height: 1.6;
     max-width: 600px;
     text-align: justify;
@@ -45,23 +44,50 @@
 
 
 .habilidade-content{
-    width: 100%;
-    margin-top: 6rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
+    padding: 3rem;
+    margin-top: 2rem;
 }
 
 .habilidade-card{
-    background-color: #8b949e;
+    background: linear-gradient(145deg, #161b22 0%, #1c2128 100%);
     padding: 1rem;
-    width: 280px;
-    height: 120px;
+    max-width: 380px;
+    height: 280px;
     display: flex;
     flex-direction: column;
     gap: .5rem;
+    padding: 1rem;
+    transition: all .3s ease-in-out;
+    will-change: transform; /* Para otimizar animações GSAP */
+}
+
+.habilidade-card:hover{
+    filter: blur(0);
+    box-shadow: 0 0 10px #ff4444;
+    transform: translateY(-10px);
+    cursor: pointer;
+}
+
+.habilidade-icon{
+    height: 50%;
+    font-size: 3rem;
+    color: #ff4444;
+}
+
+.habilidade-text h3{
+    font-size: 1.5rem;
+    color: #f3f9ff;
+    margin-bottom: .5rem;
+}
+
+.habilidade-text p{
+    font-size: 1.1rem;
+    color: #8b949e;
+    line-height: 1.4;
+    text-align: justify;
 }
 
 

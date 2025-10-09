@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import './Projects.css'
 import dancaImg from '../assets/img/danca.png'
 import mainliImg from '../assets/img/mainli.png'
@@ -6,8 +6,69 @@ import projeto3dImg from '../assets/img/Projeto3d.png'
 import sakuraImg from '../assets/img/sakura.png'
 import serdigitalImg from '../assets/img/Serdigital.png'
 import mountLand from '../assets/img/mount.png'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const Projects = () => {
+  const cardsRef = useRef([])
+
+  useEffect(() => {
+    // Animação dos cards de projeto com stagger
+    gsap.fromTo(cardsRef.current,
+      {
+        y: 80,
+        opacity: 0,
+        scale: 0.9
+      },
+      {
+        y: 0,
+        opacity: 1,
+        scale: 1,
+        duration: 0.8,
+        ease: "power2.out",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: ".projects-grid",
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse"
+        }
+      }
+    )
+
+    // Hover animations para cards
+    cardsRef.current.forEach((card) => {
+      if (card) {
+        card.addEventListener('mouseenter', () => {
+          gsap.to(card, {
+            y: -10,
+            scale: 1.02,
+            duration: 0.3,
+            ease: "power2.out"
+          })
+        })
+
+        card.addEventListener('mouseleave', () => {
+          gsap.to(card, {
+            y: 0,
+            scale: 1,
+            duration: 0.3,
+            ease: "power2.out"
+          })
+        })
+      }
+    })
+
+  }, [])
+
+  // Função para adicionar refs aos cards
+  const addToRefs = (el) => {
+    if (el && !cardsRef.current.includes(el)) {
+      cardsRef.current.push(el)
+    }
+  }
   const projects = [
     {
       id: 1,
@@ -74,7 +135,7 @@ const Projects = () => {
       
       <div className="projects-grid">
         {projects.map((project) => (
-          <article key={project.id} className="project-card">
+          <article key={project.id} className="project-card" ref={addToRefs}>
             <div className="project-image">
               <img src={project.image} alt={project.title} />
               <div className="project-overlay">
