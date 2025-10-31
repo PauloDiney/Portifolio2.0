@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import "./Main.css";
-import fogueteGif from "../assets/Videos/fogute.gif";
+import Rocket3D from "./Rocket3D";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -180,7 +180,6 @@ const Main = () => {
       
       // Movimento sincronizado do foguete
       .to(fogueteRef.current, {
-        scale: 2.2,
         x: -70,
         y: -130,
         rotation: 0,
@@ -213,7 +212,7 @@ const Main = () => {
   });
 
   return (
-    <main className="main"  id="about"ref={mainRef}>
+    <main className="main" id="about" ref={mainRef}>
       <div className="main-container">
         <div className="main-title">
           <h1 ref={h1Ref} id="lines">
@@ -233,23 +232,19 @@ const Main = () => {
           </p>
         </div>
       </div>
-      <div className="main-content">
-        <div className="base"></div>
-        <img 
-          src={fogueteGif} 
-          alt="Foguete animado" 
-          className="gif-animation"
+      
+     
+        <Rocket3D 
           ref={fogueteRef}
+          className="gif-animation"
         />
-      </div>
+   
       
       {/* Máscara de clip-path para transição */}
       <div className="mask-clip-path"></div>
       
       <img src={WaveDown} alt="Wave Down" className="wave-down" />
     </main>
-    
-    
   );
 };
 

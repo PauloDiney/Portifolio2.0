@@ -3,10 +3,10 @@
     min-height: 100vh;
     background-color: #0d1117;
     position: relative;
-    z-index: 10; /* Fica por cima da máscara (z-index: 1) */
+    z-index: 10;
     padding: 4rem 2rem;
     margin-bottom: 2rem;
-    overflow: hidden;
+    overflow: visible;
 }
 
 /* Header Section */
